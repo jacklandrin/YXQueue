@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1F7495E42029B89F00E01985 /* YXQueueBuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1F7495E52029B89F00E01985 /* Build configuration list for PBXAggregateTarget "YXQueueBuild" */;
+			buildPhases = (
+				1F7495E82029B94D00E01985 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = YXQueueBuild;
+			productName = YXQueueBuild;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		04B6B58F1EF0E77400AD2BA4 /* YXQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B58E1EF0E77400AD2BA4 /* YXQueue.m */; };
+		04B6B5901EF0E77400AD2BA4 /* YXQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B58D1EF0E77400AD2BA4 /* YXQueue.h */; };
+		04B6B59F1EF0E7AF00AD2BA4 /* YXQueueDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B5981EF0E7AF00AD2BA4 /* YXQueueDispatcher.m */; };
+		04B6B5A01EF0E7AF00AD2BA4 /* YXQueueJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B59A1EF0E7AF00AD2BA4 /* YXQueueJob.m */; };
+		04B6B5A11EF0E7AF00AD2BA4 /* YXQueueJobManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B59C1EF0E7AF00AD2BA4 /* YXQueueJobManager.m */; };
+		04B6B5A21EF0E7AF00AD2BA4 /* YXQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B59E1EF0E7AF00AD2BA4 /* YXQueueOperation.m */; };
+		04B6B5A61EF0ED1400AD2BA4 /* YXQueueDownloadJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B5A51EF0ED1400AD2BA4 /* YXQueueDownloadJob.m */; };
+		04B6B5A91EF0F22700AD2BA4 /* YXQueueDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B5A81EF0F22700AD2BA4 /* YXQueueDownloadOperation.m */; };
+		04B6B5AC1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6B5AB1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.m */; };
+		1F7495CC20298BC200E01985 /* YXQueueDispatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B5971EF0E7AF00AD2BA4 /* YXQueueDispatcher.h */; };
+		1F7495CD20298BC200E01985 /* YXQueueJob.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B5991EF0E7AF00AD2BA4 /* YXQueueJob.h */; };
+		1F7495CE20298BC200E01985 /* YXQueueJobManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B59B1EF0E7AF00AD2BA4 /* YXQueueJobManager.h */; };
+		1F7495CF20298BC200E01985 /* YXQueueOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B59D1EF0E7AF00AD2BA4 /* YXQueueOperation.h */; };
+		1F7495D020298BC200E01985 /* YXQueueDownloadJob.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B5A41EF0ED1400AD2BA4 /* YXQueueDownloadJob.h */; };
+		1F7495D120298BC200E01985 /* YXQueueDownloadOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B5A71EF0F22700AD2BA4 /* YXQueueDownloadOperation.h */; };
+		1F7495D220298BC200E01985 /* YXQueueDownloadJobManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04B6B5AA1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04B6B5881EF0E77300AD2BA4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				1F7495CC20298BC200E01985 /* YXQueueDispatcher.h in CopyFiles */,
+				1F7495CD20298BC200E01985 /* YXQueueJob.h in CopyFiles */,
+				1F7495CE20298BC200E01985 /* YXQueueJobManager.h in CopyFiles */,
+				1F7495CF20298BC200E01985 /* YXQueueOperation.h in CopyFiles */,
+				1F7495D020298BC200E01985 /* YXQueueDownloadJob.h in CopyFiles */,
+				1F7495D120298BC200E01985 /* YXQueueDownloadOperation.h in CopyFiles */,
+				1F7495D220298BC200E01985 /* YXQueueDownloadJobManager.h in CopyFiles */,
+				04B6B5901EF0E77400AD2BA4 /* YXQueue.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04B6B58A1EF0E77300AD2BA4 /* libYXQueue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYXQueue.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B6B58D1EF0E77400AD2BA4 /* YXQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXQueue.h; sourceTree = "<group>"; };
+		04B6B58E1EF0E77400AD2BA4 /* YXQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXQueue.m; sourceTree = "<group>"; };
+		04B6B5971EF0E7AF00AD2BA4 /* YXQueueDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXQueueDispatcher.h; sourceTree = "<group>"; };
+		04B6B5981EF0E7AF00AD2BA4 /* YXQueueDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXQueueDispatcher.m; sourceTree = "<group>"; };
+		04B6B5991EF0E7AF00AD2BA4 /* YXQueueJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXQueueJob.h; sourceTree = "<group>"; };
+		04B6B59A1EF0E7AF00AD2BA4 /* YXQueueJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXQueueJob.m; sourceTree = "<group>"; };
+		04B6B59B1EF0E7AF00AD2BA4 /* YXQueueJobManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXQueueJobManager.h; sourceTree = "<group>"; };
+		04B6B59C1EF0E7AF00AD2BA4 /* YXQueueJobManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXQueueJobManager.m; sourceTree = "<group>"; };
+		04B6B59D1EF0E7AF00AD2BA4 /* YXQueueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXQueueOperation.h; sourceTree = "<group>"; };
+		04B6B59E1EF0E7AF00AD2BA4 /* YXQueueOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXQueueOperation.m; sourceTree = "<group>"; };
+		04B6B5A31EF0EA7000AD2BA4 /* YXQueuePCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXQueuePCH.pch; sourceTree = "<group>"; };
+		04B6B5A41EF0ED1400AD2BA4 /* YXQueueDownloadJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXQueueDownloadJob.h; path = YXQueue/YXQueueDownloadJob.h; sourceTree = "<group>"; };
+		04B6B5A51EF0ED1400AD2BA4 /* YXQueueDownloadJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXQueueDownloadJob.m; path = YXQueue/YXQueueDownloadJob.m; sourceTree = "<group>"; };
+		04B6B5A71EF0F22700AD2BA4 /* YXQueueDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXQueueDownloadOperation.h; path = YXQueue/YXQueueDownloadOperation.h; sourceTree = "<group>"; };
+		04B6B5A81EF0F22700AD2BA4 /* YXQueueDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXQueueDownloadOperation.m; path = YXQueue/YXQueueDownloadOperation.m; sourceTree = "<group>"; };
+		04B6B5AA1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXQueueDownloadJobManager.h; path = YXQueue/YXQueueDownloadJobManager.h; sourceTree = "<group>"; };
+		04B6B5AB1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXQueueDownloadJobManager.m; path = YXQueue/YXQueueDownloadJobManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04B6B5871EF0E77300AD2BA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04B6B5811EF0E77300AD2BA4 = {
+			isa = PBXGroup;
+			children = (
+				04B6B58C1EF0E77300AD2BA4 /* YXQueue */,
+				04B6B58B1EF0E77300AD2BA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04B6B58B1EF0E77300AD2BA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04B6B58A1EF0E77300AD2BA4 /* libYXQueue.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04B6B58C1EF0E77300AD2BA4 /* YXQueue */ = {
+			isa = PBXGroup;
+			children = (
+				04B6B5A31EF0EA7000AD2BA4 /* YXQueuePCH.pch */,
+				04B6B5961EF0E7AF00AD2BA4 /* YXQueueEngine */,
+				04B6B58D1EF0E77400AD2BA4 /* YXQueue.h */,
+				04B6B58E1EF0E77400AD2BA4 /* YXQueue.m */,
+				04B6B5A41EF0ED1400AD2BA4 /* YXQueueDownloadJob.h */,
+				04B6B5A51EF0ED1400AD2BA4 /* YXQueueDownloadJob.m */,
+				04B6B5A71EF0F22700AD2BA4 /* YXQueueDownloadOperation.h */,
+				04B6B5A81EF0F22700AD2BA4 /* YXQueueDownloadOperation.m */,
+				04B6B5AA1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.h */,
+				04B6B5AB1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.m */,
+			);
+			path = YXQueue;
+			sourceTree = "<group>";
+		};
+		04B6B5961EF0E7AF00AD2BA4 /* YXQueueEngine */ = {
+			isa = PBXGroup;
+			children = (
+				04B6B5971EF0E7AF00AD2BA4 /* YXQueueDispatcher.h */,
+				04B6B5981EF0E7AF00AD2BA4 /* YXQueueDispatcher.m */,
+				04B6B5991EF0E7AF00AD2BA4 /* YXQueueJob.h */,
+				04B6B59A1EF0E7AF00AD2BA4 /* YXQueueJob.m */,
+				04B6B59B1EF0E7AF00AD2BA4 /* YXQueueJobManager.h */,
+				04B6B59C1EF0E7AF00AD2BA4 /* YXQueueJobManager.m */,
+				04B6B59D1EF0E7AF00AD2BA4 /* YXQueueOperation.h */,
+				04B6B59E1EF0E7AF00AD2BA4 /* YXQueueOperation.m */,
+			);
+			name = YXQueueEngine;
+			path = YXQueue;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04B6B5891EF0E77300AD2BA4 /* YXQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B6B5931EF0E77400AD2BA4 /* Build configuration list for PBXNativeTarget "YXQueue" */;
+			buildPhases = (
+				04B6B5861EF0E77300AD2BA4 /* Sources */,
+				04B6B5871EF0E77300AD2BA4 /* Frameworks */,
+				04B6B5881EF0E77300AD2BA4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YXQueue;
+			productName = YXQueue;
+			productReference = 04B6B58A1EF0E77300AD2BA4 /* libYXQueue.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04B6B5821EF0E77300AD2BA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = YIXIA;
+				TargetAttributes = {
+					04B6B5891EF0E77300AD2BA4 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = HF526ANGZB;
+						ProvisioningStyle = Automatic;
+					};
+					1F7495E42029B89F00E01985 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = HF526ANGZB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 04B6B5851EF0E77300AD2BA4 /* Build configuration list for PBXProject "YXQueue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04B6B5811EF0E77300AD2BA4;
+			productRefGroup = 04B6B58B1EF0E77300AD2BA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04B6B5891EF0E77300AD2BA4 /* YXQueue */,
+				1F7495E42029B89F00E01985 /* YXQueueBuild */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7495E82029B94D00E01985 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define static library target name\nLIB_NAME=\"YXQueue\"\n\n# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nDEVICE_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\nSIMULATOR_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\n# Step 1. Build Device and Simulator versions\n# insert such -arch i386 before BUILD_DIR assign arch\nxcodebuild -target \"${LIB_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target \"${LIB_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# Cleaning the oldest and make sure the output directory exists\nif [ -d \"${UNIVERSAL_OUTPUTFOLDER}\" ]\nthen\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create \"${DEVICE_DIR}/lib${LIB_NAME}.a\" \"${SIMULATOR_DIR}/lib${LIB_NAME}.a\" -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${LIB_NAME}.a\"\n\n# Last touch. copy the header files. Just for convenience\ncp -R \"${DEVICE_DIR}/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04B6B5861EF0E77300AD2BA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B6B5A61EF0ED1400AD2BA4 /* YXQueueDownloadJob.m in Sources */,
+				04B6B5A01EF0E7AF00AD2BA4 /* YXQueueJob.m in Sources */,
+				04B6B5AC1EF0F30400AD2BA4 /* YXQueueDownloadJobManager.m in Sources */,
+				04B6B59F1EF0E7AF00AD2BA4 /* YXQueueDispatcher.m in Sources */,
+				04B6B5A91EF0F22700AD2BA4 /* YXQueueDownloadOperation.m in Sources */,
+				04B6B5A11EF0E7AF00AD2BA4 /* YXQueueJobManager.m in Sources */,
+				04B6B58F1EF0E77400AD2BA4 /* YXQueue.m in Sources */,
+				04B6B5A21EF0E7AF00AD2BA4 /* YXQueueOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04B6B5911EF0E77400AD2BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LIBRARY_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Debug;
+		};
+		04B6B5921EF0E77400AD2BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LIBRARY_SEARCH_PATHS = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Release;
+		};
+		04B6B5941EF0E77400AD2BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEVELOPMENT_TEAM = HF526ANGZB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YXQueue/YXQueuePCH.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		04B6B5951EF0E77400AD2BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEVELOPMENT_TEAM = HF526ANGZB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YXQueue/YXQueuePCH.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/dependencies/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1F7495E62029B89F00E01985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HF526ANGZB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F7495E72029B89F00E01985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HF526ANGZB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04B6B5851EF0E77300AD2BA4 /* Build configuration list for PBXProject "YXQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B6B5911EF0E77400AD2BA4 /* Debug */,
+				04B6B5921EF0E77400AD2BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B6B5931EF0E77400AD2BA4 /* Build configuration list for PBXNativeTarget "YXQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B6B5941EF0E77400AD2BA4 /* Debug */,
+				04B6B5951EF0E77400AD2BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F7495E52029B89F00E01985 /* Build configuration list for PBXAggregateTarget "YXQueueBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F7495E62029B89F00E01985 /* Debug */,
+				1F7495E72029B89F00E01985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04B6B5821EF0E77300AD2BA4 /* Project object */;
+}
