@@ -9,10 +9,22 @@
 #import "YXQueueDownloadOperation.h"
 #import "YXQueueDownloadJob.h"
 
-@interface YXQueueDownloadOperation()
+
+typedef void (^DownloadProgressBlock) (NSProgress*);
+typedef NSURL* (^DownloadDestinationUrl)(NSURL*, NSURLResponse*);
+typedef void (^DownloadSuccess)(NSURLResponse *response, NSURL *fileURL);
+typedef void (^DownloadFailure)(NSURLResponse *response, NSError *error);
+
+@interface YXQueueDownloadOperation() <NSURLSessionTaskDelegate,NSURLSessionDownloadDelegate>
 {
     YXQueueOperationModel *_model;
 }
+
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, copy  ) DownloadProgressBlock downloadProgressBlock;
+@property (nonatomic, copy  ) DownloadDestinationUrl destinationUrl;
+@property (nonatomic, copy  ) DownloadSuccess downloadSuccess;
+@property (nonatomic, copy  ) DownloadFailure downloadFailure;
 
 @end
 
@@ -24,6 +36,7 @@
     if (self = [super initWithJob:queueJob]) {
         self.resourceIdentifier = @"com.queue.download";
         self.queuePriority = NSOperationQueuePriorityLow;
+        _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     }
     return self;
 }
@@ -38,16 +51,16 @@
     if (!_model) {
         _model = [[YXQueueOperationModel alloc] init];
         _model.operationTypeString = @"downloadOperation";
-        _model.maxConcurrentOperationCount = 1;
+        _model.maxConcurrentOperationCount = 5;
     }
     return _model;
 }
 
-- (void)executeTaskWithResultBlock:(void (^)())block
+- (void)executeTaskWithResultBlock:(void (^)(void))block
 {
     __weak typeof(self) weakSelf = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.job.downloadUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:3600];
-    NSURLSessionDownloadTask *downloadTask = [[YXRequestManager shareManager] downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
+    NSURLSessionDownloadTask *downloadTask = [self downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
         weakSelf.progress = (float)downloadProgress.completedUnitCount / (float)downloadProgress.totalUnitCount;
         [weakSelf notifiProgressDidChange];
     } destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
@@ -65,4 +78,68 @@
     }];
     downloadTask.priority = NSOperationQueuePriorityLow;
 }
+
+-(NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request
+                                            progress:(void (^)(NSProgress * _Nullable))progress
+                                         destination:(NSURL *(^)(NSURL * _Nullable, NSURLResponse * _Nullable))destination
+                                             success:(void (^)(NSURLResponse * _Nullable, NSURL * _Nullable))success
+                                             failure:(void (^)(NSURLResponse * _Nullable, NSError * _Nullable))failure
+{
+    NSURLSessionDownloadTask *task = [_session downloadTaskWithRequest:request];
+    self.downloadProgressBlock = progress;
+    self.destinationUrl = destination;
+    self.downloadSuccess = success;
+    self.downloadFailure = failure;
+    [task resume];
+    return task;
+}
+
+#pragma mark - NSURLSessionDownloadDelegate
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    if (self.downloadProgressBlock) {
+        NSProgress *progress = [NSProgress progressWithTotalUnitCount:totalBytesExpectedToWrite];
+        progress.completedUnitCount = totalBytesWritten;
+        self.downloadProgressBlock(progress);
+    }
+}
+
+
+- (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
+    if (downloadTask.error) {
+        self.downloadFailure(downloadTask.response, downloadTask.error);
+        return;
+    }
+    NSURL *fileURL = [NSURL URLWithString:@""];
+    if (self.destinationUrl) {
+        fileURL = self.destinationUrl(location, downloadTask.response);
+        NSError *error = nil;
+        [[NSFileManager defaultManager] moveItemAtURL:location toURL:fileURL error:&error];
+        if (error) {
+            self.downloadFailure(downloadTask.response, error);
+        } else {
+            self.downloadSuccess(downloadTask.response, location);
+        }
+    }
+    
+}
+
+
+#pragma mark - NSURLSessionTaskDelegate
+-(void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler
+{
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+        completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    if (error && self.downloadFailure) {
+        self.downloadFailure(task.response, error);
+    }
+}
+
+
 @end

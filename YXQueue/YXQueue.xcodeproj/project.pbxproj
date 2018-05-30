@@ -91,11 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0441576320B7CEFD0070EE40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04B6B5811EF0E77300AD2BA4 = {
 			isa = PBXGroup;
 			children = (
 				04B6B58C1EF0E77300AD2BA4 /* YXQueue */,
 				04B6B58B1EF0E77300AD2BA4 /* Products */,
+				0441576320B7CEFD0070EE40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

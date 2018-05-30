@@ -62,7 +62,6 @@ typedef NS_ENUM(NSInteger, YXQueueJobState)
 
 - (void)doJob; //add job into queue
 - (void)doCancel; //non-current job can be canceled
-- (BOOL)canDoCancelJob; //if can cancel job
 
 - (void)addDelegate:(id<YXQueueJobDelegate>)delegate;
 - (void)removeDelegate:(id<YXQueueJobDelegate>)delegate;

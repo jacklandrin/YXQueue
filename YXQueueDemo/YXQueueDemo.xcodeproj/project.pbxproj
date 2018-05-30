@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0441576A20B7CF110070EE40 /* libYXQueue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0446FE2620B68CB0009F3D9E /* libYXQueue.a */; };
 		0446FE0C20B519C7009F3D9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446FE0B20B519C7009F3D9E /* AppDelegate.m */; };
 		0446FE0F20B519C8009F3D9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446FE0E20B519C8009F3D9E /* ViewController.m */; };
 		0446FE1220B519C8009F3D9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446FE1020B519C8009F3D9E /* Main.storyboard */; };
 		0446FE1420B519C8009F3D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0446FE1320B519C8009F3D9E /* Assets.xcassets */; };
 		0446FE1720B519C8009F3D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446FE1520B519C8009F3D9E /* LaunchScreen.storyboard */; };
 		0446FE1A20B519C8009F3D9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446FE1920B519C8009F3D9E /* main.m */; };
+		0446FE3620B6B489009F3D9E /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446FE3520B6B489009F3D9E /* ImageTableViewCell.m */; };
+		04F9319820B7B63300F9761E /* DownloadingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F9319720B7B63300F9761E /* DownloadingTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,11 @@
 		0446FE1820B519C8009F3D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0446FE1920B519C8009F3D9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0446FE2020B68CAF009F3D9E /* YXQueue.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YXQueue.xcodeproj; path = ../YXQueue/YXQueue.xcodeproj; sourceTree = "<group>"; };
+		0446FE3420B6B489009F3D9E /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		0446FE3520B6B489009F3D9E /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		04B55F2F20BE9180001DAA1A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		04F9319620B7B63300F9761E /* DownloadingTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadingTask.h; sourceTree = "<group>"; };
+		04F9319720B7B63300F9761E /* DownloadingTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadingTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,18 +52,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0441576A20B7CF110070EE40 /* libYXQueue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0441576720B7CF110070EE40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B55F2F20BE9180001DAA1A /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0446FDFE20B519C7009F3D9E = {
 			isa = PBXGroup;
 			children = (
 				0446FE2020B68CAF009F3D9E /* YXQueue.xcodeproj */,
 				0446FE0920B519C7009F3D9E /* YXQueueDemo */,
 				0446FE0820B519C7009F3D9E /* Products */,
+				0441576720B7CF110070EE40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +97,10 @@
 				0446FE1520B519C8009F3D9E /* LaunchScreen.storyboard */,
 				0446FE1820B519C8009F3D9E /* Info.plist */,
 				0446FE1920B519C8009F3D9E /* main.m */,
+				0446FE3420B6B489009F3D9E /* ImageTableViewCell.h */,
+				0446FE3520B6B489009F3D9E /* ImageTableViewCell.m */,
+				04F9319620B7B63300F9761E /* DownloadingTask.h */,
+				04F9319720B7B63300F9761E /* DownloadingTask.m */,
 			);
 			path = YXQueueDemo;
 			sourceTree = "<group>";
@@ -179,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0446FE0F20B519C8009F3D9E /* ViewController.m in Sources */,
+				0446FE3620B6B489009F3D9E /* ImageTableViewCell.m in Sources */,
 				0446FE1A20B519C8009F3D9E /* main.m in Sources */,
+				04F9319820B7B63300F9761E /* DownloadingTask.m in Sources */,
 				0446FE0C20B519C7009F3D9E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B22726TNGH;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../YXQueue/YXQueue\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../YXQueue/YXQueue\"/**";
 				INFOPLIST_FILE = YXQueueDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JackLiu.YXQueueDemo;
@@ -331,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B22726TNGH;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../YXQueue/YXQueue\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../YXQueue/YXQueue\"/**";
 				INFOPLIST_FILE = YXQueueDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JackLiu.YXQueueDemo;

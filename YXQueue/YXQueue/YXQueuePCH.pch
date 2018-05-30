@@ -9,7 +9,6 @@
 #ifndef YXQueuePCH_pch
 #define YXQueuePCH_pch
 
-#import "YXRequestManager.h"
 #ifndef __OPTIMIZE__
 #define NSLog(fmt,...) NSLog((@"[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
