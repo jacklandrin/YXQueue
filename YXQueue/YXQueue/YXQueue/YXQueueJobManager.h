@@ -3,7 +3,7 @@
 //  YXQueueDemo
 //
 //  Created by jack on 2017/5/31.
-//  Copyright © 2017年 YIXIA. All rights reserved.
+//  Copyright © 2017年 JackLiu. All rights reserved.
 //
 
 #import "YXQueueJob.h"
