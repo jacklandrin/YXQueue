@@ -62,7 +62,7 @@ config:
 }
 ```
 
-Subsenquence, create **YXQueueDownloadOperation** inheriting from **YXQueueOperation**. Config operationModel, resourceIdentifier(thread's name) and appropriate class of job. **YXQueueOperationModel** can rule the max concurrent thread count and operation type. Implement the method `- (void)executeTaskWithResultBlock:(void (^)(void))block`.
+Subsequence, create **YXQueueDownloadOperation** inheriting from **YXQueueOperation**. Config operationModel, resourceIdentifier(thread's name) and appropriate class of job. **YXQueueOperationModel** can rule the max concurrent thread count and operation type. Implement the method `- (void)executeTaskWithResultBlock:(void (^)(void))block`.
 
 ```
 - (instancetype)initWithJob:(YXQueueJob *)queueJob
@@ -135,7 +135,7 @@ job.targePath = targetUrl;
 
 ```
 
-and you can register these delegate methods to recieve change of job's status:
+and you can register these delegate methods to receive change of job's status:
 
 ```
 /**
@@ -163,7 +163,7 @@ and you can register these delegate methods to recieve change of job's status:
 
 ## Demo
 
-YXQueueDemo is a mp4 downloader as a YXQueue's demo provided for you. You can modify the mp4 URL to download different video, and the default max concorrent download count is **5**, it's set in **YXQueueDownloadOperation**'s method **operationModel**.
+YXQueueDemo is a mp4 downloader as a YXQueue's demo provided for you. You can modify the mp4 URL to download different video, and the default max concurrent download count is **5**, it's set in **YXQueueDownloadOperation**'s method **operationModel**.
 
 ![](http://www.jacklandrin.com/wp-content/uploads/2018/05/download-demo.png)
 
